@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.section {
+    overflow: hidden;
+}
+/*第一屏*/
+.first {
+    overflow: hidden;
+}
+.first a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 80px auto;
+}
+.first .text {
+ text-align: center;
+}
+.first .text img {
+    margin:40px 40px;
+    opacity: 0.2;
+}
+.first.current .text img {
+    margin: 40px 10px;
+    opacity: 1;
+    transition: margin 1s,opacity 1s;
+}
+.first .info {
+    text-align: center;
+}
+
+/*第二屏*/
+
+.second {
+
+}
+/*> div：插件会默认在内容外层包裹一层div*/
+.second>div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.second .shield {
+    width: 428px;
+    font-size: 0;
+    /*flex: 1;*/
+    /*height: 498px;*/
+}
+.second .shield>img {
+    transition:transform 1s;
+}
+.second .shield>img:nth-of-type(1){
+    transform: translate(100px,100px) rotate(30deg);
+}
+.second .shield>img:nth-of-type(2){
+    transform: translate(200px,10px) rotate(130deg);
+}
+.second .shield>img:nth-of-type(3){
+    transform: translate(10px,-100px) rotate(20deg);
+}
+.second .shield>img:nth-of-type(4){
+    transform: translate(200px,10px) rotate(-30deg);
+}
+.second .shield>img:nth-of-type(5){
+    transform: translate(60px,16px) rotate(60deg);
+}
+.second .shield>img:nth-of-type(6){
+    transform: translate(40px,40px) rotate(80deg);
+}
+.second .shield>img:nth-of-type(7){
+    transform: translate(-20px,-50px) rotate(90deg);
+}
+.second .shield>img:nth-of-type(8){
+    transform: translate(-90px,90px) rotate(-90deg);
+}
+.second .shield>img:nth-of-type(9){
+    transform: translate(60px,100px) rotate(-30deg);
+}
+.section.current .shield>img {
+    transform: none;
+}
+.second .info {
+    /*flex: 2;*/
+    width: 635px;
+    /*height: 309px;*/
+}
+
+
+/*第三屏*/
+
+.third {
+    position: relative;
+}
+.third .info {
+    width: 631px;
+    height: 278px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%,-50%);
+}
+.third .speed {
+    width: 453px;
+    height: 449px;
+    background:url("../images/circle.png");
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(120%,-50%);
+}
+.third .speed img {
+    position: absolute;
+    top: 700px;
+    left:-600px;
+    transition:top 1s,left 1s;
+}
+.section.current .speed img {
+    top: 125px;
+    left: 125px;
+}
+
+
+/*第四屏*/
+.fourth {
+    position: relative;
+}
+.fourth .search {
+    width: 529px;
+    height: 438px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-120%,-50%);
+    overflow: hidden;
+    /*background: sandybrown;*/
+}
+.fourth .search .kuang {
+    width: 529px;
+    height: 66px;
+    background: url("../images/search.png");
+    transform: translate(-100%,0);
+    transition:transform 1s;
+}
+.fourth .search .kuang .wenzi {
+    width: 0px;
+    height: 22px;
+    position: absolute;
+    left: 23px;
+    top: 22px;
+    background: url("../images/key.png");
+    transition:width 1s steps(5) 1s;
+}
+.fourth .search .result {
+    width: 529px;
+    height: 0px;
+    background: url("../images/result.png");
+    position: absolute;
+    top: 53px;
+    left:0;
+    transition:height 1s 2s;
+}
+.fourth .info {
+    width: 612px;
+    height: 299px;
+    background: url("../images/info_4.png");
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform:translate(100%,-50%);
+}
+.section.current .search .kuang .wenzi {
+    width: 99px;
+}
+.section.current .kuang {
+    transform: none;
+}
+
+.section.current .result{
+    height: 372px;
+}
+
+/*第五屏*/
+
+.fifth {
+
+}
+.fifth .info{
+    margin: 30px 0;
+    width: 100%;
+    height: 134px;
+    background: url("../images/info_5.png") no-repeat center center;
+    /*background-size: 66%;*/
+}
+.fifth .wrapper {
+    width: 1004px;
+    height: 541px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0 auto;
+    overflow: hidden;
+    /*border: 1px solid #fff;*/
+}
+.fifth .wrapper .linetop {
+    width: 1004px;
+    height: 1px;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(100%,0);
+    transition: transform 1s;
+}
+.section.current .wrapper .linetop {
+    transform: none;
+}
+.fifth .wrapper .lineleft,.fifth .wrapper .lineright {
+    width: 1px;
+    height: 541px;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    top: 0;
+    transition: transform 1s;
+}
+.fifth .wrapper .lineleft {
+    left: 0;
+    transform: translate(0,-100%);
+}
+.section.current .wrapper .lineleft {
+    transform:none;
+}
+.fifth .wrapper .lineright {
+    right: 0;
+    transform: translate(0,100%);
+}
+.section.current .wrapper .lineright {
+    transform:none;
+}
+.fifth .nav {
+    width: 1004px;
+    height: 79px;
+    opacity: 0;
+    transition: opacity 1s 1s;
+    background: url("../images/toolbar.png");
+}
+.section.current .nav {
+    opacity: 1;
+}
+
+.fifth .nav .link {
+    width: 0px;
+    height: 25px;
+    border: 1px solid rgba(255,255,255,0.5);
+    position: absolute;
+    top: 31px;
+    left: 70px;
+    transition: width 1s 1s;
+}
+.section.current .nav .link {
+    width: 925px;
+}
+
+.fifth .buttom {
+    position: absolute;
+    left: 0;
+    bottom:0;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    background: #000;
+    width: 100%;
+    opacity: 0;
+    transition:opacity 1s;
+    height: 29px;
+    background: url("../images/extra.png") no-repeat center right;
+}
+.section.current .buttom {
+    opacity: 1;
+}
